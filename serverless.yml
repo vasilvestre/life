@@ -22,6 +22,7 @@ package:
 functions:
     website:
         handler: public/index.php
+        memorySize: 512 # set to 512M instead of 1024M (the default)
         timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
         layers:
             - ${bref:layer.php-80-fpm}
@@ -30,6 +31,7 @@ functions:
     console:
         handler: bin/console
         timeout: 120 # in seconds
+        memorySize: 2048 # set to 512M instead of 1024M (the default)
         layers:
             - ${bref:layer.php-80} # PHP
             - ${bref:layer.console} # The "console" layer
