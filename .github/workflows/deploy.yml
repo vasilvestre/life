@@ -29,3 +29,5 @@ jobs:
         # or if using AWS credentials directly
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: upload assets
+      run:  aws s3 sync public/ s3://sf-life-dev/ --delete --exclude index.php
