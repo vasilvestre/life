@@ -7,6 +7,7 @@ provider:
     environment:
         # Symfony environment variables
         APP_ENV: prod
+        DATABASE_URL: ${ssm:/my-app/my-parameter}
 
 plugins:
     - ./vendor/bref/bref
@@ -28,6 +29,13 @@ functions:
             - ${bref:layer.php-80-fpm}
         events:
             - httpApi: '*'
+        vpc:
+            securityGroupIds:
+                - sg-13c4767d
+            subnetIds:
+                - subnet-0fc39174
+                - subnet-fbd6ed92
+                - subnet-b2bcdbff
     console:
         handler: bin/console
         timeout: 120 # in seconds
@@ -35,3 +43,11 @@ functions:
         layers:
             - ${bref:layer.php-80} # PHP
             - ${bref:layer.console} # The "console" layer
+        vpc:
+            securityGroupIds:
+                - sg-13c4767d
+            subnetIds:
+                - subnet-0fc39174
+                - subnet-fbd6ed92
+                - subnet-b2bcdbff
+
