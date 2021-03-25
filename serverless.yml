@@ -1,0 +1,35 @@
+service: life-sf
+
+provider:
+    name: aws
+    region: eu-west-3
+    runtime: provided.al2
+    environment:
+        # Symfony environment variables
+        APP_ENV: prod
+
+plugins:
+    - ./vendor/bref/bref
+
+package:
+    exclude:
+        - node_modules/**
+        - tests/**
+        - var/**
+    include:
+        - var/cache/prod/** # allows to deploy a pre-warmed container
+
+functions:
+    website:
+        handler: public/index.php
+        timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+        layers:
+            - ${bref:layer.php-80-fpm}
+        events:
+            - httpApi: '*'
+    console:
+        handler: bin/console
+        timeout: 120 # in seconds
+        layers:
+            - ${bref:layer.php-80} # PHP
+            - ${bref:layer.console} # The "console" layer
