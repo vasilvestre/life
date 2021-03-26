@@ -9,20 +9,26 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
+    services:
+      # https://docs.docker.com/samples/library/mysql/
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v2
     - uses: shivammathur/setup-php@v2
       with:
         php-version: "8.0"
+        extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, curl
     - uses: "ramsey/composer-install@v1"
       env:
           APP_ENV: prod
       with:
-        composer-options: "--prefer-dist --optimize-autoloader --no-dev --no-scripts"
-    - name: Cache warmup
-      env:
-          APP_ENV: prod
-      run: bin/console cache:clear
+        composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - run: composer require bref/bref
     - name: serverless deploy
       uses: serverless/github-action@master
