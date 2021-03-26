@@ -37,5 +37,5 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-	- { path: ^/command-scheduler, role: ROLE_ADMIN } 
+      - { path: ^/command-scheduler, role: ROLE_ADMIN } 
 
