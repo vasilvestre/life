@@ -9,14 +9,6 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
-    env:
-        DATABASE_URL: "mysql://root:password@mydb/main"
-    services:
-      mydb:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: password
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
     steps:
     - uses: actions/checkout@v2
     - uses: shivammathur/setup-php@v2
@@ -26,7 +18,11 @@ jobs:
       env:
           APP_ENV: prod
       with:
-        composer-options: "--prefer-dist --optimize-autoloader --no-dev"
+        composer-options: "--prefer-dist --optimize-autoloader --no-dev --no-scripts"
+    - name: Cache warmup
+      env:
+          APP_ENV: prod
+      run: bin/console cache:clear
     - run: composer require bref/bref
     - name: serverless deploy
       uses: serverless/github-action@master
