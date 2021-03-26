@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d55e73dd3acafefc02bbd1e57a51c31f",
+    "content-hash": "538d1aedfea595feb0a971436dbaac22",
     "packages": [
         {
             "name": "api-platform/core",
@@ -1755,6 +1755,160 @@
             "time": "2020-07-30T16:57:33+00:00"
         },
         {
+            "name": "dragonmantank/cron-expression",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dragonmantank/cron-expression.git",
+                "reference": "7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c",
+                "reference": "7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "webmozart/assert": "^1.7.0"
+            },
+            "replace": {
+                "mtdowling/cron-expression": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-webmozart-assert": "^0.12.7",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cron\\": "src/Cron/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Tankersley",
+                    "email": "chris@ctankersley.com",
+                    "homepage": "https://github.com/dragonmantank"
+                }
+            ],
+            "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+            "keywords": [
+                "cron",
+                "schedule"
+            ],
+            "support": {
+                "issues": "https://github.com/dragonmantank/cron-expression/issues",
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/dragonmantank",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-24T19:55:57+00:00"
+        },
+        {
+            "name": "dukecity/command-scheduler-bundle",
+            "version": "v4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dukecity/CommandSchedulerBundle.git",
+                "reference": "84a1487274b9605d5ee252615b2190403025cfb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dukecity/CommandSchedulerBundle/zipball/84a1487274b9605d5ee252615b2190403025cfb3",
+                "reference": "84a1487274b9605d5ee252615b2190403025cfb3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "^2.2",
+                "doctrine/doctrine-migrations-bundle": "^3.0",
+                "doctrine/orm": "^2.8.1",
+                "dragonmantank/cron-expression": "^3.1",
+                "ext-posix": "*",
+                "lorisleiva/cron-translator": "^0.2",
+                "nesbot/carbon": "^2.43",
+                "php": "^8.0",
+                "sensio/framework-extra-bundle": "^6.1",
+                "symfony/asset": "^4.4.20|^5.2",
+                "symfony/config": "^4.4.20|^5.2",
+                "symfony/console": "^4.4.20|^5.2",
+                "symfony/debug-bundle": "^4.4.20|^5.2",
+                "symfony/dependency-injection": "^4.4.20|^5.2",
+                "symfony/dotenv": "^4.4.20|^5.2",
+                "symfony/form": "^4.4.20|^5.2",
+                "symfony/framework-bundle": "^4.4.20|^5.2",
+                "symfony/http-kernel": "^4.4.20|^5.2",
+                "symfony/inflector": "^4.4.20|^5.2",
+                "symfony/lock": "^4.4.20|^5.2",
+                "symfony/property-access": "^4.4.20|^5.2",
+                "symfony/translation": "^4.4.20|^5.2",
+                "symfony/twig-bundle": "^4.4.20|^5.2",
+                "symfony/validator": "^4.4.20|^5.2",
+                "symfony/yaml": "^4.4.20|^5.2"
+            },
+            "require-dev": {
+                "doctrine/doctrine-fixtures-bundle": "^3.4.0",
+                "ext-pcntl": "*",
+                "jetbrains/phpstorm-attributes": "^1.0",
+                "liip/test-fixtures-bundle": "^1.11.0",
+                "phpunit/phpunit": "^8.0|^9.3",
+                "symfony/browser-kit": "^4.4.20|^5.2",
+                "symfony/css-selector": "^4.4.20|^5.2",
+                "symfony/dom-crawler": "^4.4.20|^5.2",
+                "symfony/maker-bundle": "^1.11"
+            },
+            "suggest": {
+                "ext-pcntl": "For using the scheduler daemon",
+                "symfony/notifier": "Send Notifications (E-Mails) ^5.2",
+                "twig/cssinliner-extra": "Needed for E-Mail Notification ^3.0",
+                "twig/inky-extra": "Needed for E-Mail Notification ^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Dukecity\\CommandSchedulerBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Guyon",
+                    "email": "julienguyon@hotmail.com"
+                },
+                {
+                    "name": "Dukecity",
+                    "email": "dukecity.code@gmail.com"
+                }
+            ],
+            "description": "This Symfony bundle will allow you to schedule all your commands just like UNIX crontab",
+            "homepage": "https://github.com/Dukecity/CommandSchedulerBundle",
+            "keywords": [
+                "command",
+                "cron",
+                "scheduler",
+                "symfony",
+                "task"
+            ],
+            "support": {
+                "issues": "https://github.com/Dukecity/CommandSchedulerBundle/issues",
+                "source": "https://github.com/Dukecity/CommandSchedulerBundle/tree/v4.0.2"
+            },
+            "time": "2021-03-21T12:22:38+00:00"
+        },
+        {
             "name": "fig/link-util",
             "version": "1.2.0",
             "source": {
@@ -2167,6 +2321,59 @@
             "time": "2021-02-25T21:54:58+00:00"
         },
         {
+            "name": "lorisleiva/cron-translator",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lorisleiva/cron-translator.git",
+                "reference": "764996770558dddc7def8619095391a4ec8048f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lorisleiva/cron-translator/zipball/764996770558dddc7def8619095391a4ec8048f2",
+                "reference": "764996770558dddc7def8619095391a4ec8048f2",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lorisleiva\\CronTranslator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Loris LEIVA",
+                    "email": "loris.leiva@gmail.com",
+                    "homepage": "https://lorisleiva.com"
+                }
+            ],
+            "description": "Makes CRON expressions human-readable",
+            "homepage": "https://github.com/lorisleiva/cron-translator",
+            "keywords": [
+                "cron",
+                "expression",
+                "human"
+            ],
+            "support": {
+                "issues": "https://github.com/lorisleiva/cron-translator/issues",
+                "source": "https://github.com/lorisleiva/cron-translator/tree/v0.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lorisleiva",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-01-20T10:55:08+00:00"
+        },
+        {
             "name": "mnapoli/silly",
             "version": "1.7.2",
             "source": {
@@ -2276,6 +2483,99 @@
                 "source": "https://github.com/nelmio/NelmioCorsBundle/tree/2.1.0"
             },
             "time": "2020-07-22T11:44:28+00:00"
+        },
+        {
+            "name": "nesbot/carbon",
+            "version": "2.46.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4",
+                "reference": "2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.1.8 || ^8.0",
+                "symfony/polyfill-mbstring": "^1.0",
+                "symfony/translation": "^3.4 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.7",
+                "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
+                "kylekatarnls/multi-tester": "^2.0",
+                "phpmd/phpmd": "^2.9",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.54",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.14",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "bin": [
+                "bin/carbon"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev",
+                    "dev-3.x": "3.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Carbon\\": "src/Carbon/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Nesbitt",
+                    "email": "brian@nesbot.com",
+                    "homepage": "http://nesbot.com"
+                },
+                {
+                    "name": "kylekatarnls",
+                    "homepage": "http://github.com/kylekatarnls"
+                }
+            ],
+            "description": "An API extension for DateTime that supports 281 different languages.",
+            "homepage": "http://carbon.nesbot.com",
+            "keywords": [
+                "date",
+                "datetime",
+                "time"
+            ],
+            "support": {
+                "issues": "https://github.com/briannesbitt/Carbon/issues",
+                "source": "https://github.com/briannesbitt/Carbon"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/Carbon",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-24T17:30:44+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -3657,6 +3957,84 @@
                 }
             ],
             "time": "2021-03-06T13:42:15+00:00"
+        },
+        {
+            "name": "symfony/debug-bundle",
+            "version": "v5.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/debug-bundle.git",
+                "reference": "ec21bd26d24dab02ac40e4bec362b3f4032486e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/debug-bundle/zipball/ec21bd26d24dab02ac40e4bec362b3f4032486e8",
+                "reference": "ec21bd26d24dab02ac40e4bec362b3f4032486e8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": ">=7.2.5",
+                "symfony/http-kernel": "^4.4|^5.0",
+                "symfony/twig-bridge": "^4.4|^5.0",
+                "symfony/var-dumper": "^4.4|^5.0"
+            },
+            "conflict": {
+                "symfony/config": "<4.4",
+                "symfony/dependency-injection": "<5.2"
+            },
+            "require-dev": {
+                "symfony/config": "^4.4|^5.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/web-profiler-bundle": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/config": "For service container configuration",
+                "symfony/dependency-injection": "For using as a service from the container"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\DebugBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides a tight integration of the Symfony Debug component into the Symfony full-stack framework",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/debug-bundle/tree/v5.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-01-10T16:30:10+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -5158,6 +5536,77 @@
             "time": "2021-03-10T17:07:35+00:00"
         },
         {
+            "name": "symfony/inflector",
+            "version": "v5.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/inflector.git",
+                "reference": "4c285002228d0e27480e5eee871f4e3f0a05a4eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/inflector/zipball/4c285002228d0e27480e5eee871f4e3f0a05a4eb",
+                "reference": "4c285002228d0e27480e5eee871f4e3f0a05a4eb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/string": "~5.1.10|^5.2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Inflector\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Converts words between their singular and plural forms (English only)",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string",
+                "symfony",
+                "words"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/inflector/tree/v5.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-01-10T16:29:19+00:00"
+        },
+        {
             "name": "symfony/intl",
             "version": "v5.2.4",
             "source": {
@@ -5244,6 +5693,86 @@
                 }
             ],
             "time": "2021-02-18T22:42:36+00:00"
+        },
+        {
+            "name": "symfony/lock",
+            "version": "v5.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/lock.git",
+                "reference": "9e8feb3141406dfc98ca57771fc00873b6f4b60e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/9e8feb3141406dfc98ca57771fc00873b6f4b60e",
+                "reference": "9e8feb3141406dfc98ca57771fc00873b6f4b60e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/log": "~1.0",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "conflict": {
+                "doctrine/dbal": "<2.10"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.10|^3.0",
+                "mongodb/mongodb": "~1.1",
+                "predis/predis": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Lock\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jérémy Derussé",
+                    "email": "jeremy@derusse.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Creates and manages locks, a mechanism to provide exclusive access to a shared resource",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cas",
+                "flock",
+                "locking",
+                "mutex",
+                "redlock",
+                "semaphore"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/lock/tree/v5.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-15T18:55:04+00:00"
         },
         {
             "name": "symfony/messenger",
@@ -7087,6 +7616,99 @@
                 }
             ],
             "time": "2021-02-16T10:20:28+00:00"
+        },
+        {
+            "name": "symfony/translation",
+            "version": "v5.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "0947ab1e3aabd22a6bef393874b2555d2bb976da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/0947ab1e3aabd22a6bef393874b2555d2bb976da",
+                "reference": "0947ab1e3aabd22a6bef393874b2555d2bb976da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.15",
+                "symfony/translation-contracts": "^2.3"
+            },
+            "conflict": {
+                "symfony/config": "<4.4",
+                "symfony/dependency-injection": "<5.0",
+                "symfony/http-kernel": "<5.0",
+                "symfony/twig-bundle": "<5.0",
+                "symfony/yaml": "<4.4"
+            },
+            "provide": {
+                "symfony/translation-implementation": "2.3"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/console": "^4.4|^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/finder": "^4.4|^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/intl": "^4.4|^5.0",
+                "symfony/service-contracts": "^1.1.2|^2",
+                "symfony/yaml": "^4.4|^5.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Resources/functions.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools to internationalize your application",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/translation/tree/v5.2.5"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-06T07:59:01+00:00"
         },
         {
             "name": "symfony/translation-contracts",
