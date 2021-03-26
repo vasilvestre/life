@@ -9,6 +9,10 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: 'eu-west-3'
     services:
       # https://docs.docker.com/samples/library/mysql/
       mysql:
@@ -34,10 +38,6 @@ jobs:
       uses: serverless/github-action@master
       with:
         args: deploy
-      env:
-        #SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
-        # or if using AWS credentials directly
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: upload assets
       run:  aws s3 sync public/ s3://sf-life-dev/ --delete --exclude index.php
+
