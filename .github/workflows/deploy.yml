@@ -13,6 +13,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: 'eu-west-3'
+      APP_ENV: prod
     services:
       # https://docs.docker.com/samples/library/mysql/
       mysql:
@@ -29,10 +30,10 @@ jobs:
         php-version: "8.0"
         extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, curl
     - uses: "ramsey/composer-install@v1"
-      env:
-          APP_ENV: prod
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
+    - name: warmup
+      run: bin/console cache:warmup
     - run: composer require bref/bref
     - name: serverless deploy
       uses: serverless/github-action@master
