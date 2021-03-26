@@ -25,6 +25,7 @@ jobs:
     - uses: "ramsey/composer-install@v1"
       env:
           APP_ENV: prod
+          DATABASE_URL: "mysql://root:password@mysql/main"
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - run: composer require bref/bref
