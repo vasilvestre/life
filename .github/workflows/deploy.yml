@@ -34,7 +34,7 @@ jobs:
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev"
     - name: warmup
-      run: LAMBDA_TASK_ROOT=bin/console cache:warmup
+      run: bin/console cache:warmup
     - run: composer require bref/bref
     - name: serverless deploy
       uses: serverless/github-action@master
