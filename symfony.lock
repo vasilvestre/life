@@ -225,9 +225,6 @@
     "riverline/multipart-parser": {
         "version": "2.0.8"
     },
-    "rodrigorm/phpqa-make": {
-        "version": "0.0.5"
-    },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
         "recipe": {

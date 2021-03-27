@@ -9,6 +9,8 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+/.php_cs.cache
+/.idea/
 /build/
 /.serverless/
 

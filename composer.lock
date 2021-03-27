@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1151964b2d83a90a99fdf27aa281db39",
+    "content-hash": "14c58ebd8a8f2923f8861f7ea10826f4",
     "packages": [
         {
             "name": "api-platform/core",
@@ -9171,53 +9171,6 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.4"
             },
             "time": "2020-12-20T10:01:03+00:00"
-        },
-        {
-            "name": "rodrigorm/phpqa-make",
-            "version": "0.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rodrigorm/phpqa-make.git",
-                "reference": "5efd91e2ff749c91b72595519adebfb8b621bd57"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rodrigorm/phpqa-make/zipball/5efd91e2ff749c91b72595519adebfb8b621bd57",
-                "reference": "5efd91e2ff749c91b72595519adebfb8b621bd57",
-                "shasum": ""
-            },
-            "require-dev": {
-                "rhumsaa/jenkins-php": "^3.0"
-            },
-            "suggest": {
-                "rhumsaa/jenkins-php": "^3.0"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Rodrigo Moyle",
-                    "email": "rodrigorm@gmail.com",
-                    "homepage": "https://github.com/rodrigorm",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Makefile for PHP QA Tools",
-            "homepage": "https://github.com/rodrigorm/phpqa-make",
-            "keywords": [
-                "make",
-                "phpqa",
-                "tool"
-            ],
-            "support": {
-                "email": "rodrigorm@gmail.com",
-                "issues": "https://github.com/rodrigorm/audit/issues",
-                "source": "https://github.com/rodrigorm/phpqa-make/tree/master"
-            },
-            "time": "2016-11-28T18:53:59+00:00"
         },
         {
             "name": "symfony/browser-kit",

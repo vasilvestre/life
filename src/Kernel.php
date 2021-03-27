@@ -14,24 +14,24 @@ class Kernel extends BaseKernel
     protected function configureContainer(ContainerConfigurator $container): void
     {
         $container->import('../config/{packages}/*.yaml');
-        $container->import('../config/{packages}/'.$this->environment.'/*.yaml');
+        $container->import('../config/{packages}/' . $this->environment . '/*.yaml');
 
-        if (is_file(\dirname(__DIR__).'/config/services.yaml')) {
+        if (is_file(\dirname(__DIR__) . '/config/services.yaml')) {
             $container->import('../config/services.yaml');
-            $container->import('../config/{services}_'.$this->environment.'.yaml');
-        } elseif (is_file($path = \dirname(__DIR__).'/config/services.php')) {
+            $container->import('../config/{services}_' . $this->environment . '.yaml');
+        } elseif (is_file($path = \dirname(__DIR__) . '/config/services.php')) {
             (require $path)($container->withPath($path), $this);
         }
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import('../config/{routes}/'.$this->environment.'/*.yaml');
+        $routes->import('../config/{routes}/' . $this->environment . '/*.yaml');
         $routes->import('../config/{routes}/*.yaml');
 
-        if (is_file(\dirname(__DIR__).'/config/routes.yaml')) {
+        if (is_file(\dirname(__DIR__) . '/config/routes.yaml')) {
             $routes->import('../config/routes.yaml');
-        } elseif (is_file($path = \dirname(__DIR__).'/config/routes.php')) {
+        } elseif (is_file($path = \dirname(__DIR__) . '/config/routes.php')) {
             (require $path)($routes->withPath($path), $this);
         }
     }
@@ -50,7 +50,7 @@ class Kernel extends BaseKernel
     {
         // When on the lambda only /tmp is writeable
         if (isset($_SERVER['LAMBDA_TASK_ROOT'])) {
-            return '/tmp/cache/'.$this->environment;
+            return '/tmp/cache/' . $this->environment;
         }
 
         return parent::getCacheDir();
@@ -58,6 +58,6 @@ class Kernel extends BaseKernel
 
     public function getBuildDir(): string
     {
-        return $this->getProjectDir().'/var/cache/'.$this->environment;
+        return $this->getProjectDir() . '/var/cache/' . $this->environment;
     }
 }
