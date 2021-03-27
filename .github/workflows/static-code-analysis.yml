@@ -3,7 +3,7 @@ name: Static code analysis
 on: [pull_request]
 
 jobs:
-  static-code-analysis:
+  phpstan:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,6 +12,12 @@ jobs:
         uses: docker://jakzal/phpqa:php8.0-alpine
         with:
           args: phpstan analyse -c phpstan.neon
+
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
       - name: PHP-CS-Fixer
         uses: docker://jakzal/phpqa:php8.0-alpine
         with:
