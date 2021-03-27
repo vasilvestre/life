@@ -17,6 +17,8 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
         "dukecity/command-scheduler-bundle": "^4.0",
+        "easycorp/easyadmin-bundle": "^3.2",
+        "friendsofsymfony/ckeditor-bundle": "^2.3",
         "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^6.1",

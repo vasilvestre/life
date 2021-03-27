@@ -22,12 +22,10 @@ security:
                 authenticators:
                     - App\Security\FormAuthenticator
             logout:
-                path: app_logout
-                # where to redirect after logout
-                # target: app_any_route
-
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
+                path: logout
+                target: login
+            form_login:
+                default_target_path: login
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
@@ -35,7 +33,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-      - { path: ^/command-scheduler, role: ROLE_ADMIN } 
-

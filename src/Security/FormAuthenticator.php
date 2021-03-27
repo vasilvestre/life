@@ -24,7 +24,7 @@ class FormAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'login';
 
     private EntityManagerInterface $entityManager;
     private UrlGeneratorInterface $urlGenerator;
@@ -99,7 +99,7 @@ class FormAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('homepage'));
+        return new RedirectResponse($this->urlGenerator->generate('admin'));
     }
 
     protected function getLoginUrl(): string

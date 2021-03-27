@@ -2,6 +2,7 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-dukecity_command_scheduler:
-    resource: "@DukecityCommandSchedulerBundle/Resources/config/routing.php"
-    prefix:   /
+# Handler by EasyAdmin
+#dukecity_command_scheduler:
+#    resource: "@DukecityCommandSchedulerBundle/Resources/config/routing.php"
+#    prefix:   /

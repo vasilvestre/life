@@ -15,3 +15,11 @@ dukecity_command_scheduler:
         - router
         - doctrine
         - debug
+        - make
+        - api
+        - lint
+        - secrets
+        - ckeditor
+        - dbal
+        - security
+        - assets
