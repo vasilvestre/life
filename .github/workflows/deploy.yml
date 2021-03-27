@@ -15,31 +15,41 @@ jobs:
       AWS_DEFAULT_REGION: 'eu-west-3'
       APP_ENV: prod
       LAMBDA_TASK_ROOT: bref
-    services:
-      # https://docs.docker.com/samples/library/mysql/
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
     - uses: actions/checkout@v2
+
     - uses: shivammathur/setup-php@v2
       with:
         php-version: "8.0"
         extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, curl
+
+    - name: "Set composer cache directory"
+      id: composer-cache
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    - name: "Cache composer"
+      uses: actions/cache@v2.1.2
+      with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-8.0-composer-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-8.0-composer-
+
     - uses: "ramsey/composer-install@v1"
       with:
-        composer-options: "--prefer-dist --optimize-autoloader --no-dev"
-    - name: warmup
+        composer-options: "--prefer-dist --optimize-autoloader --no-dev --no-scripts"
+
+    - name: Warmup cache so boost performance
       run: bin/console cache:warmup
-    - run: composer require bref/bref
+
+    - name: Require bref/bref to deploy
+      run: composer require bref/bref
+
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
         args: deploy
-    - name: upload assets
+
+    - name: Upload assets to s3
       run:  aws s3 sync public/ s3://sf-life-dev/ --delete --exclude index.php
 
