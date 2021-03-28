@@ -55,9 +55,4 @@ class Kernel extends BaseKernel
 
         return parent::getCacheDir();
     }
-
-    public function getBuildDir(): string
-    {
-        return $this->getProjectDir() . '/var/cache/' . $this->environment;
-    }
 }

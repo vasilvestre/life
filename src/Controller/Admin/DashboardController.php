@@ -17,7 +17,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        return $this->redirect($routeBuilder->setController(PostController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -28,7 +28,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+//        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Posts', 'fas fa-newspaper', Post::class);
         yield MenuItem::linkToCrud('Cron', 'fas fa-list', ScheduledCommand::class);
         yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
