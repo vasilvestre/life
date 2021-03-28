@@ -27,10 +27,4 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
 
-# should not be necessary, should fix prod but isn't
-#    EasyCorp\Bundle\EasyAdminBundle\Cache\CacheWarmer:
-#        tags:
-#            - { name: kernel.cache_warmer, priority: 1001 } 
