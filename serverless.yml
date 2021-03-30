@@ -1,13 +1,20 @@
 service: life-sf
 
+useDotenv: true
+
 provider:
     name: aws
     region: eu-west-3
     runtime: provided.al2
+    stage: prod
     environment:
         # Symfony environment variables
         APP_ENV: prod
-        DATABASE_URL: ${ssm:/life-sf-dev/db-dsn}
+        APP_DEBUG: 0
+        APP_SECRET: ${ssm:/life-sf-prod/secret}
+        DATABASE_URL: ${ssm:/life-sf-prod/db-dsn}
+        CORS_ALLOW_ORIGIN: ${env:CORS_ALLOW_ORIGIN}
+    lambdaHashingVersion: 20201221
 
 plugins:
     - ./vendor/bref/bref
@@ -66,7 +73,7 @@ resources:
         Assets:
             Type: AWS::S3::Bucket
             Properties:
-                BucketName: sf-life-dev
+                BucketName: sf-life-prod
                 CorsConfiguration:
                     CorsRules:
                         -   AllowedHeaders: ["*"]
