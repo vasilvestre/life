@@ -17,7 +17,11 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return $this->redirect($routeBuilder->setController(PostController::class)->generateUrl());
+        if ($this->getUser()) {
+            return parent::index();
+        }
+
+	return $this->redirectToRoute('login');
     }
 
     public function configureDashboard(): Dashboard
