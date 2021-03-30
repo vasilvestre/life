@@ -14,6 +14,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: 'eu-west-3'
       APP_ENV: prod
+      APP_DEBUG: 0
       LAMBDA_TASK_ROOT: bref
 
     steps:
@@ -37,10 +38,7 @@ jobs:
 
     - uses: "ramsey/composer-install@v1"
       with:
-        composer-options: "--prefer-dist --optimize-autoloader --no-dev --no-scripts"
-
-    - name: Warmup cache so boost performance
-      run: bin/console cache:warmup
+        composer-options: "--prefer-dist --optimize-autoloader --no-dev"
 
     - name: Require bref/bref to deploy
       run: composer require bref/bref
