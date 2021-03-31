@@ -49,5 +49,5 @@ jobs:
         args: deploy
 
     - name: Upload assets to s3
-      run:  aws s3 sync public/ s3://sf-life-dev/ --delete --exclude index.php
+      run:  aws s3 sync public/ s3://sf-life-prod/ --delete --exclude index.php
 
