@@ -1,4 +1,4 @@
 framework:
   assets:
-    base_urls: 'https://sf-life-dev.s3.eu-west-3.amazonaws.com'
+    base_urls: 'https://sf-life-prod.s3.eu-west-3.amazonaws.com'
 
