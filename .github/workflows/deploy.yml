@@ -24,17 +24,6 @@ jobs:
         php-version: "8.0"
         extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, curl, apcu
 
-    - name: "Set composer cache directory"
-      id: composer-cache
-      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-    - name: "Cache composer"
-      uses: actions/cache@v2.1.2
-      with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-8.0-composer-${{ hashFiles('composer.json') }}
-          restore-keys: ${{ runner.os }}-8.0-composer-
-
     - uses: "ramsey/composer-install@v1"
       with:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev --apcu-autoloader --no-scripts"
