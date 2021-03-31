@@ -15,7 +15,6 @@ jobs:
       AWS_DEFAULT_REGION: 'eu-west-3'
       APP_ENV: prod
       APP_DEBUG: 0
-      LAMBDA_TASK_ROOT: bref
 
     steps:
     - uses: actions/checkout@v2
@@ -38,7 +37,12 @@ jobs:
 
     - uses: "ramsey/composer-install@v1"
       with:
-        composer-options: "--prefer-dist --optimize-autoloader --no-dev --apcu-autoloader"
+        composer-options: "--prefer-dist --optimize-autoloader --no-dev --apcu-autoloader --no-scripts"
+        
+    - name: "Create cache"
+      run: bin/console cache:warmup
+      env:
+        LAMBDA_TASK_ROOT: bref
 
     - name: Require bref/bref to deploy
       run: composer require bref/bref
