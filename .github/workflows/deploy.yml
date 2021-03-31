@@ -29,7 +29,9 @@ jobs:
         composer-options: "--prefer-dist --optimize-autoloader --no-dev --apcu-autoloader --no-scripts"
         
     - name: "Create cache"
-      run: bin/console cache:warmup
+      run: |
+        bin/console cache:warmup
+        bin/console as:install
 
     - name: serverless deploy
       uses: serverless/github-action@master
