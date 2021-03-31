@@ -42,9 +42,6 @@ jobs:
     - name: "Create cache"
       run: bin/console cache:warmup
 
-    - name: Require bref/bref to deploy
-      run: composer require bref/bref
-
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
