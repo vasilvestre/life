@@ -14,7 +14,7 @@ provider:
         APP_SECRET: ${ssm:/life-sf-prod/secret}
         DATABASE_URL: ${ssm:/life-sf-prod/db-dsn}
         CORS_ALLOW_ORIGIN: ${env:CORS_ALLOW_ORIGIN}
-    lambdaHashingVersion: 20201221
+    lambdaHashingVersion: '20210326'
 
 plugins:
     - ./vendor/bref/bref
