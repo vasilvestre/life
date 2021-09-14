@@ -14,18 +14,24 @@ provider:
         APP_SECRET: ${ssm:/life-sf-prod/secret}
         DATABASE_URL: ${ssm:/life-sf-prod/db-dsn}
         CORS_ALLOW_ORIGIN: ${env:CORS_ALLOW_ORIGIN}
-    lambdaHashingVersion: '20210326'
+    lambdaHashingVersion: '20201221'
 
 plugins:
     - ./vendor/bref/bref
 
 package:
-    exclude:
-        - node_modules/**
-        - tests/**
-        - var/**
-    include:
-        - var/cache/prod/** # allows to deploy a pre-warmed container
+    patterns:
+        # Excluded files and folders for deployment
+        - '!assets/**'
+        - '!node_modules/**'
+        - '!public/build/**'
+        - '!tests/**'
+        - '!var/**'
+        # If you want to include files and folders that are part of excluded folders,
+        # add them at the end
+        - 'var/cache/prod/**'
+        - 'public/build/entrypoints.json'
+        - 'public/build/manifest.json'
 
 functions:
     website:
