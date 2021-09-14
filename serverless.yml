@@ -57,15 +57,15 @@ functions:
                 - subnet-0fc39174
                 - subnet-fbd6ed92
                 - subnet-b2bcdbff
-    cron:
-        handler: bin/console
-        layers:
-            - ${bref:layer.php-80}
-            - ${bref:layer.console}
-        events:
-            - schedule:
-                  rate: rate(1 minute)
-                  input: '"scheduler:execute"'
+#    cron:
+#        handler: bin/console
+#        layers:
+#            - ${bref:layer.php-80}
+#            - ${bref:layer.console}
+#        events:
+#            - schedule:
+#                  rate: rate(1 minute)
+#                  input: '"scheduler:execute"'
 
 resources:
     Resources:
